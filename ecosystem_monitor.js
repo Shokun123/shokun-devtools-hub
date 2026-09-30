@@ -21,7 +21,10 @@ const ECOSYSTEM_TOOLS = [
   { name: 'Google Maps B2B Lead Extractor', repo: 'Shokun123/google-maps-b2b-lead-scraper', price: '$19 USDT' },
   { name: 'LeadRescue AI Micro-SaaS', repo: 'Shokun123/leadrescue-ai', price: '$19 USDT' },
   { name: 'AI Commit Generator for VS Code', repo: 'Shokun123/vscode-ai-commit-generator', price: '$15 USDT' },
-  { name: 'AI PR Code Reviewer Action', repo: 'Shokun123/ai-pr-reviewer-action', price: '$15 USDT' }
+  { name: 'AI PR Code Reviewer Action', repo: 'Shokun123/ai-pr-reviewer-action', price: '$15 USDT' },
+  { name: 'Webhook Mock Engine', repo: 'Shokun123/webhook-mock-engine', price: '$19 USDT' },
+  { name: 'Markdown Docs PDF Builder', repo: 'Shokun123/markdown-docs-pdf-builder', price: '$15 USDT' },
+  { name: 'Env Guardian CLI', repo: 'Shokun123/env-guardian-cli', price: '$19 USDT' }
 ];
 
 async function pingIndexNow() {
