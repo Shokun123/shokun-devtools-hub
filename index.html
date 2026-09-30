@@ -73,7 +73,7 @@
     <div class="text-center max-w-3xl mx-auto mb-12">
       <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-yellow bg-brand-yellow/10 border border-brand-yellow/30 px-3.5 py-1.5 rounded-full mb-5">
         <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
-        7 Herramientas de Producción en Vivo
+        10 Herramientas de Producción en Vivo
       </div>
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
         Catálogo Unificado de <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-yellow-300 to-amber-500">Herramientas & Micro-SaaS</span>
@@ -89,7 +89,7 @@
             class="w-full bg-brand-card border border-brand-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-yellow font-mono">
         </div>
         <div class="flex gap-1.5 justify-center flex-wrap" id="categoryButtons">
-          <button onclick="setCategory('all')" class="cat-btn active bg-brand-yellow text-black font-extrabold text-xs px-3 py-2 rounded-xl transition" data-cat="all">Todos (7)</button>
+          <button onclick="setCategory('all')" class="cat-btn active bg-brand-yellow text-black font-extrabold text-xs px-3 py-2 rounded-xl transition" data-cat="all">Todos (10)</button>
           <button onclick="setCategory('dev')" class="cat-btn bg-brand-card hover:bg-white/10 text-gray-300 font-bold text-xs px-3 py-2 rounded-xl border border-brand-border transition" data-cat="dev">Dev Tools</button>
           <button onclick="setCategory('growth')" class="cat-btn bg-brand-card hover:bg-white/10 text-gray-300 font-bold text-xs px-3 py-2 rounded-xl border border-brand-border transition" data-cat="growth">B2B Growth</button>
           <button onclick="setCategory('infra')" class="cat-btn bg-brand-card hover:bg-white/10 text-gray-300 font-bold text-xs px-3 py-2 rounded-xl border border-brand-border transition" data-cat="infra">Infra & CI</button>
@@ -122,7 +122,73 @@
         </div>
       </div>
 
-      <!-- Tool 2: Awesome System Architecture & AI Prompts -->
+      <!-- Tool 2: Awesome CursorRules & Agent Skills -->
+      <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="dev" data-name="awesome cursorrules agent skills ai coding cursor claude gemini">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 border border-indigo-500/30 px-2.5 py-0.5 rounded-full font-mono">Agent Skills</span>
+            <span class="text-xs font-mono font-bold text-indigo-300">$19 - $30 USDT</span>
+          </div>
+          <h3 class="text-base font-extrabold text-white mb-2">🧠 Awesome CursorRules & Skills</h3>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Colección curada de 50+ reglas optimizadas para Cursor (.cursorrules) y agentes autónomos (Claude, Gemini, Antigravity). Aumenta la precisión de generación de código a cero alucinaciones.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-2">
+          <a href="https://github.com/Shokun123/awesome-cursorrules-agent-skills" target="_blank" class="text-xs text-gray-300 hover:text-white font-mono bg-white/5 px-3 py-2 rounded-xl border border-white/10 transition">
+            GitHub →
+          </a>
+          <button onclick="openModal('cursorrules', 'Awesome CursorRules Super-Pack Pro', '19.00')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow">
+            Super-Pack ($19)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tool 3: Disposable Email Validator Micro-API -->
+      <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="dev" data-name="disposable email validator api burner mail spam detection cloudflare worker">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-rose-400 bg-rose-500/10 border border-rose-500/30 px-2.5 py-0.5 rounded-full font-mono">Micro-API</span>
+            <span class="text-xs font-mono font-bold text-rose-300">$15.00 USDT</span>
+          </div>
+          <h3 class="text-base font-extrabold text-white mb-2">✉️ Disposable Email Validator</h3>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Micro-API sub-5ms para Cloudflare Workers y Node.js. Bloquea correos temporales, desechables y fraudulentos en formularios SaaS con base de datos de 4,000+ dominios basura.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-2">
+          <a href="https://github.com/Shokun123/disposable-email-validator-api" target="_blank" class="text-xs text-gray-300 hover:text-white font-mono bg-white/5 px-3 py-2 rounded-xl border border-white/10 transition">
+            GitHub →
+          </a>
+          <button onclick="openModal('email-validator', 'Disposable Email Validator Pro API', '15.00')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow">
+            Licencia Pro ($15)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tool 4: Dev & Founder OS Obsidian & Notion Vault -->
+      <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="growth" data-name="dev founder os obsidian vault notion system architecture startup agile kanban">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-teal-400 bg-teal-500/10 border border-teal-500/30 px-2.5 py-0.5 rounded-full font-mono">Obsidian Vault</span>
+            <span class="text-xs font-mono font-bold text-teal-300">$19.00 USDT</span>
+          </div>
+          <h3 class="text-base font-extrabold text-white mb-2">📚 Developer & Founder OS</h3>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Vault modular completo para Obsidian y Notion para fundadores técnicos: registro de decisiones de arquitectura (ADRs), sprint kanban, roadmaps, modelos financieros y checklists OWASP.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-2">
+          <a href="https://github.com/Shokun123/dev-founder-os-vault" target="_blank" class="text-xs text-gray-300 hover:text-white font-mono bg-white/5 px-3 py-2 rounded-xl border border-white/10 transition">
+            GitHub →
+          </a>
+          <button onclick="openModal('founder-os', 'Dev & Founder OS Pro Vault Bundle', '19.00')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow">
+            Vault Pro ($19)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tool 5: Awesome System Architecture & AI Prompts -->
       <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="dev" data-name="awesome system architecture ai prompts blueprints serverless">
         <div>
           <div class="flex justify-between items-start mb-3">

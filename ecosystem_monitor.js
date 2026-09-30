@@ -13,6 +13,9 @@ const LEADRESCUE_URL = 'https://shokun123.github.io/leadrescue-ai/';
 
 const ECOSYSTEM_TOOLS = [
   { name: 'Binance Pay SaaS Starter', repo: 'Shokun123/binance-pay-saas-starter', price: '$29 - $49 USDT' },
+  { name: 'Awesome CursorRules & Agent Skills', repo: 'Shokun123/awesome-cursorrules-agent-skills', price: '$19 - $30 USDT' },
+  { name: 'Disposable Email Validator API', repo: 'Shokun123/disposable-email-validator-api', price: '$15 USDT' },
+  { name: 'Dev & Founder OS Obsidian Vault', repo: 'Shokun123/dev-founder-os-vault', price: '$19 USDT' },
   { name: 'Awesome System Architecture & AI Prompts', repo: 'Shokun123/awesome-system-architecture-ai', price: '$10 - $35 USDT' },
   { name: 'Docker Backup Relay', repo: 'Shokun123/docker-backup-relay', price: '$25 USDT' },
   { name: 'Google Maps B2B Lead Extractor', repo: 'Shokun123/google-maps-b2b-lead-scraper', price: '$19 USDT' },
@@ -25,7 +28,7 @@ async function pingIndexNow() {
   const payload = JSON.stringify({
     host: 'shokun123.github.io',
     key: INDEXNOW_KEY,
-    keyLocation: `${LEADRESCUE_URL}${INDEXNOW_KEY}.txt`,
+    keyLocation: `${HUB_URL}${INDEXNOW_KEY}.txt`,
     urlList: [
       HUB_URL,
       LEADRESCUE_URL,
@@ -74,7 +77,7 @@ function updateStatusMarkdown() {
   content += `\n---\n*Automated health report maintained by GitHub Actions & IndexNow Protocol.*\n`;
 
   fs.writeFileSync('STATUS.md', content, 'utf-8');
-  console.log('[✓] STATUS.md updated successfully with 7 active tools.');
+  console.log(`[✓] STATUS.md updated successfully with ${ECOSYSTEM_TOOLS.length} active tools.`);
 }
 
 async function run() {
