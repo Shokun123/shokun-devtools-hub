@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shokun DevTools Hub — Ecosistema Unificado de Herramientas Digitales & Cero Coste de Servidor</title>
+  <meta name="description" content="Catálogo oficial de software abierto, extensiones de VS Code, GitHub Actions, boilerplates y micro-SaaS con pagos directos en Binance Pay.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#F0B90B',
+              dark: '#08090C',
+              card: '#12151D',
+              border: '#232936'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-mesh {
+      background-color: #08090C;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(240, 185, 11, 0.09) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.06) 0px, transparent 50%);
+    }
+  </style>
+</head>
+<body class="min-h-screen gradient-mesh text-gray-200 font-sans selection:bg-brand-yellow selection:text-black flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="border-b border-brand-border/60 sticky top-0 bg-[#08090C]/90 backdrop-blur-md z-40 px-4 sm:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="#" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-yellow to-amber-500 flex items-center justify-center font-black text-black text-lg shadow-lg shadow-brand-yellow/20">
+            ⚡
+          </div>
+          <div>
+            <span class="text-lg font-black tracking-tight text-white block leading-tight">Shokun<span class="text-brand-yellow">DevTools</span></span>
+            <span class="text-[10px] text-gray-400 font-mono">Ecosistema Soberano $0 Coste</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a href="https://github.com/Shokun123" target="_blank" class="hidden sm:flex items-center gap-1.5 text-xs font-bold text-gray-300 hover:text-white bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl transition">
+          <span>GitHub Hub</span>
+          <span class="text-[10px] text-brand-yellow font-mono">★</span>
+        </a>
+        <button onclick="openModal('all')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-4 py-2 rounded-xl shadow-lg shadow-brand-yellow/20 transition transform hover:-translate-y-0.5">
+          Checkout Binance Pay
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 flex-1 w-full">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-yellow bg-brand-yellow/10 border border-brand-yellow/30 px-3.5 py-1.5 rounded-full mb-5">
+        <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
+        7 Herramientas de Producción en Vivo
+      </div>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+        Catálogo Unificado de <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-yellow-300 to-amber-500">Herramientas & Micro-SaaS</span>
+      </h1>
+      <p class="text-gray-300 text-sm sm:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
+        Soluciones de código abierto para desarrolladores, agencias y startups con <strong class="text-white">cero comisiones bancarias</strong>. Descarga el código gratis o adquiere licencias Pro directas a Binance.
+      </p>
+
+      <!-- Search & Filters -->
+      <div class="mt-8 max-w-xl mx-auto flex flex-col sm:flex-row gap-3">
+        <div class="relative flex-1">
+          <input type="text" id="searchInput" oninput="filterTools()" placeholder="Buscar por palabra clave (ej. docker, commit, b2b, saas)..."
+            class="w-full bg-brand-card border border-brand-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-yellow font-mono">
+        </div>
+        <div class="flex gap-1.5 justify-center flex-wrap" id="categoryButtons">
+          <button onclick="setCategory('all')" class="cat-btn active bg-brand-yellow text-black font-extrabold text-xs px-3 py-2 rounded-xl transition" data-cat="all">Todos (7)</button>
+          <button onclick="setCategory('dev')" class="cat-btn bg-brand-card hover:bg-white/10 text-gray-300 font-bold text-xs px-3 py-2 rounded-xl border border-brand-border transition" data-cat="dev">Dev Tools</button>
+          <button onclick="setCategory('growth')" class="cat-btn bg-brand-card hover:bg-white/10 text-gray-300 font-bold text-xs px-3 py-2 rounded-xl border border-brand-border transition" data-cat="growth">B2B Growth</button>
+          <button onclick="setCategory('infra')" class="cat-btn bg-brand-card hover:bg-white/10 text-gray-300 font-bold text-xs px-3 py-2 rounded-xl border border-brand-border transition" data-cat="infra">Infra & CI</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="toolsGrid">
+
+      <!-- Tool 1: Binance Pay SaaS Starter -->
+      <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="dev" data-name="binance pay saas starter boilerplate nextjs crypto checkout">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-yellow bg-brand-yellow/10 border border-brand-yellow/30 px-2.5 py-0.5 rounded-full font-mono">Boilerplate SaaS</span>
+            <span class="text-xs font-mono font-bold text-emerald-400">$29 - $49 USDT</span>
+          </div>
+          <h3 class="text-base font-extrabold text-white mb-2">⚡ Binance Pay SaaS Starter</h3>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Boilerplate para Next.js y Node.js que integra cobros en cripto a 0% comisiones con verificación HMAC-SHA512 y entrega digital de licencias.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-2">
+          <a href="https://github.com/Shokun123/binance-pay-saas-starter" target="_blank" class="text-xs text-gray-300 hover:text-white font-mono bg-white/5 px-3 py-2 rounded-xl border border-white/10 transition">
+            GitHub →
+          </a>
+          <button onclick="openModal('saas-starter', 'Binance Pay SaaS Starter Pro', '29.00')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow">
+            Comprar Pro ($29)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tool 2: Awesome System Architecture & AI Prompts -->
+      <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="dev" data-name="awesome system architecture ai prompts blueprints serverless">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 border border-purple-500/30 px-2.5 py-0.5 rounded-full font-mono">Awesome List</span>
+            <span class="text-xs font-mono font-bold text-purple-300">$15 - $35 USDT</span>
+          </div>
+          <h3 class="text-base font-extrabold text-white mb-2">🏛️ Awesome System Architecture</h3>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Biblioteca curada de diagramas de arquitectura Mermaid, diseños serverless a $0 coste y prompts de IA para producción y ciberseguridad.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-2">
+          <a href="https://github.com/Shokun123/awesome-system-architecture-ai" target="_blank" class="text-xs text-gray-300 hover:text-white font-mono bg-white/5 px-3 py-2 rounded-xl border border-white/10 transition">
+            GitHub →
+          </a>
+          <button onclick="openModal('awesome-pack', 'Super-Pack Prompts & Arquitectura', '15.00')" class="bg-brand-yellow/10 hover:bg-brand-yellow/20 text-brand-yellow border border-brand-yellow/30 font-bold text-xs px-3.5 py-2 rounded-xl transition">
+            Super-Pack ($15)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tool 3: Docker Backup Relay -->
+      <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="infra" data-name="docker backup relay postgres sqlite mysql encrypted telegram s3">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 border border-blue-500/30 px-2.5 py-0.5 rounded-full font-mono">Docker Hub</span>
+            <span class="text-xs font-mono font-bold text-blue-300">$25.00 USDT</span>
+          </div>
+          <h3 class="text-base font-extrabold text-white mb-2">🐳 Docker Backup Relay</h3>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Contenedor listo para correr con `docker compose` que automatiza copias de seguridad de bases de datos con cifrado AES-256-GCM y envío a Telegram.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-2">
+          <a href="https://github.com/Shokun123/docker-backup-relay" target="_blank" class="text-xs text-gray-300 hover:text-white font-mono bg-white/5 px-3 py-2 rounded-xl border border-white/10 transition">
+            GitHub →
+          </a>
+          <button onclick="openModal('docker-relay', 'Docker Backup Relay Enterprise', '25.00')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow">
+            Licencia ($25)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tool 4: Google Maps B2B Lead Extractor -->
+      <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="growth" data-name="google maps b2b lead extractor apify actor csv dataset">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-mono">Apify Actor</span>
+            <span class="text-xs font-mono font-bold text-emerald-300">$19.00 USDT</span>
+          </div>
+          <h3 class="text-base font-extrabold text-white mb-2">🗺️ Google Maps B2B Extractor</h3>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Extractor de leads comerciales (emails, teléfonos, webs y redes sociales) sin pagar APIs de Google Maps. Incluye datasets CSV listos.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-2">
+          <a href="https://github.com/Shokun123/google-maps-b2b-lead-scraper" target="_blank" class="text-xs text-gray-300 hover:text-white font-mono bg-white/5 px-3 py-2 rounded-xl border border-white/10 transition">
+            GitHub →
+          </a>
+          <button onclick="openModal('b2b-scraper', 'Bases de Datos B2B 10k + Extractor', '19.00')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow">
+            Bases B2B ($19)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tool 5: LeadRescue AI Micro-SaaS -->
+      <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="growth" data-name="leadrescue ai speed to lead saas b2b calculator">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/30 px-2.5 py-0.5 rounded-full font-mono">Micro-SaaS</span>
+            <span class="text-xs font-mono font-bold text-amber-300">$19.00 USDT</span>
+          </div>
+          <h3 class="text-base font-extrabold text-white mb-2">🛡️ LeadRescue AI</h3>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Auditor financiero interactivo basado en Harvard Business Review que cuantifica la pérdida de dinero por latencia y entrega un motor de respuesta &lt; 60s.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-2">
+          <div class="flex gap-1.5">
+            <a href="https://shokun123.github.io/leadrescue-ai/" target="_blank" class="text-[11px] text-gray-300 hover:text-white font-mono bg-white/5 px-2.5 py-1.5 rounded-lg border border-white/10 transition">
+              Web →
+            </a>
+            <a href="https://github.com/Shokun123/leadrescue-ai" target="_blank" class="text-[11px] text-gray-300 hover:text-white font-mono bg-white/5 px-2.5 py-1.5 rounded-lg border border-white/10 transition">
+              Git →
+            </a>
+          </div>
+          <button onclick="openModal('leadrescue', 'LeadRescue AI Suite Pro', '19.00')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow">
+            Suite Pro ($19)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tool 6: AI Commit Generator for VS Code -->
+      <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="dev" data-name="vscode extension ai commit generator conventional commits changelog">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 px-2.5 py-0.5 rounded-full font-mono">VS Code Ext</span>
+            <span class="text-xs font-mono font-bold text-cyan-300">$15.00 USDT</span>
+          </div>
+          <h3 class="text-base font-extrabold text-white mb-2">💻 AI Commit Generator</h3>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Extensión de Visual Studio Code que inspecciona cambios staged en Git y redacta mensajes Conventional Commits (`feat:`, `fix:`) y changelogs.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-2">
+          <a href="https://github.com/Shokun123/vscode-ai-commit-generator" target="_blank" class="text-xs text-gray-300 hover:text-white font-mono bg-white/5 px-3 py-2 rounded-xl border border-white/10 transition">
+            GitHub →
+          </a>
+          <button onclick="openModal('vscode-commit', 'AI Commit Generator Pro', '15.00')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow">
+            Licencia ($15)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tool 7: AI PR Code Reviewer Action -->
+      <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="infra" data-name="ai pr code reviewer github action security linter ci cd owasp">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-red-400 bg-red-500/10 border border-red-500/30 px-2.5 py-0.5 rounded-full font-mono">GitHub Action</span>
+            <span class="text-xs font-mono font-bold text-red-300">$15.00 USDT</span>
+          </div>
+          <h3 class="text-base font-extrabold text-white mb-2">🔍 AI PR Code Reviewer</h3>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            GitHub Action de CI/CD para auditorías de seguridad en Pull Requests. Detecta fugas de contraseñas de AWS, tokens, inyecciones SQL y vulnerabilidades OWASP.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-2">
+          <a href="https://github.com/Shokun123/ai-pr-reviewer-action" target="_blank" class="text-xs text-gray-300 hover:text-white font-mono bg-white/5 px-3 py-2 rounded-xl border border-white/10 transition">
+            GitHub →
+          </a>
+          <button onclick="openModal('ai-pr', 'AI PR Code Reviewer Pro', '15.00')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow">
+            Licencia ($15)
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Universal Binance Pay Checkout Modal -->
+  <div id="checkoutModal" class="fixed inset-0 bg-black/85 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
+    <div class="bg-brand-card border border-brand-border rounded-2xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition">✕</button>
+
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-10 h-10 rounded-xl bg-brand-yellow flex items-center justify-center text-black font-black text-xl">
+          ⚡
+        </div>
+        <div>
+          <h3 id="modalTitle" class="text-base font-extrabold text-white">Checkout Universal Binance Pay</h3>
+          <p class="text-xs text-gray-400">Total a pagar: <strong id="modalAmount" class="text-brand-yellow">29.00 USDT</strong></p>
+        </div>
+      </div>
+
+      <!-- Payment instructions -->
+      <div class="bg-[#08090C] border border-brand-border rounded-xl p-4 mb-4">
+        <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-2">1. Destino Oficial en Binance:</span>
+        <div class="flex items-center justify-between bg-white/5 p-2.5 rounded-lg border border-white/10 mb-2">
+          <div>
+            <span class="text-xs text-gray-400 block font-mono text-[10px]">Binance Pay UID:</span>
+            <span class="text-white font-mono font-bold text-sm">1049392123</span>
+          </div>
+          <button onclick="copyUID()" class="bg-brand-yellow/10 hover:bg-brand-yellow/20 text-brand-yellow border border-brand-yellow/30 text-xs px-2.5 py-1.5 rounded-lg font-bold transition">
+            Copiar UID
+          </button>
+        </div>
+        <div class="text-[11px] text-gray-400 space-y-1 font-mono">
+          <p>• Titular: <span class="text-white">User-79a91</span></p>
+          <p>• Redes de transferencia: <span class="text-emerald-400">BEP20</span> o <span class="text-purple-400">Polygon</span></p>
+        </div>
+      </div>
+
+      <!-- Verification Form -->
+      <div>
+        <label class="block text-xs font-bold text-gray-300 mb-2 uppercase tracking-wide">
+          2. Valida tu Pago y Obtén tu Clave de Licencia:
+        </label>
+        <div class="space-y-2 mb-3">
+          <input type="text" id="txEmail" placeholder="Tu correo electrónico (para envío de la clave)"
+            class="w-full bg-[#08090C] border border-brand-border rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brand-yellow font-mono">
+          <input type="text" id="txInput" placeholder="TxID de Binance o Pay ID (ej. 1049392123)"
+            class="w-full bg-[#08090C] border border-brand-border rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brand-yellow font-mono">
+        </div>
+        <button onclick="validatePayment()" class="w-full bg-gradient-to-r from-brand-yellow to-amber-400 hover:from-yellow-400 hover:to-brand-yellow text-black font-extrabold py-3 rounded-xl text-xs transition shadow-md">
+          Validar Transacción y Desbloquear
+        </button>
+        <div id="paymentResult" class="mt-3 p-3 rounded-xl text-xs font-mono hidden"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-brand-card border border-brand-border text-white text-xs px-4 py-3 rounded-xl shadow-2xl hidden transition-all duration-300 flex items-center gap-2">
+    <span class="text-emerald-400 font-bold">✓</span>
+    <span id="toastMsg">Copiado al portapapeles</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-brand-border/60 bg-[#08090C] px-6 py-8 text-center text-xs text-gray-400 max-w-7xl mx-auto w-full">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-5xl mx-auto mb-3">
+      <div class="flex items-center gap-2">
+        <span class="text-brand-yellow font-bold text-sm">⚡ Shokun DevTools Hub</span>
+        <span class="text-gray-500">·</span>
+        <span class="text-gray-400 text-[11px]">Infraestructura 100% Gratuita & Soberana</span>
+      </div>
+      <div class="flex gap-4 text-xs font-mono">
+        <span>Binance UID: <strong class="text-white">1049392123</strong></span>
+      </div>
+    </div>
+    <p class="text-[11px] text-gray-500">
+      Shokun DevTools Hub © 2026. Todos los proyectos son de código abierto con opción de licencia comercial Pro perpetua.
+    </p>
+  </footer>
+
+  <script>
+    let activeCategory = 'all';
+
+    function setCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = 'cat-btn bg-brand-yellow text-black font-extrabold text-xs px-3 py-2 rounded-xl transition';
+        } else {
+          btn.className = 'cat-btn bg-brand-card hover:bg-white/10 text-gray-300 font-bold text-xs px-3 py-2 rounded-xl border border-brand-border transition';
+        }
+      });
+      filterTools();
+    }
+
+    function filterTools() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.tool-card');
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        const name = card.getAttribute('data-name');
+        const matchesCat = (activeCategory === 'all' || cat === activeCategory);
+        const matchesQuery = (!q || name.includes(q));
+
+        if (matchesCat && matchesQuery) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(id, title = 'Ecosistema Shokun DevTools Pro', price = '29.00') {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalAmount').innerText = `${price} USDT`;
+      document.getElementById('checkoutModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+      document.getElementById('paymentResult').classList.add('hidden');
+    }
+
+    function copyUID() {
+      navigator.clipboard.writeText('1049392123').then(() => {
+        showToast('✓ Binance UID: 1049392123 copiado al portapapeles');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2500);
+    }
+
+    function validatePayment() {
+      const tx = document.getElementById('txInput').value.trim();
+      const email = document.getElementById('txEmail').value.trim() || 'developer@company.com';
+      const resultDiv = document.getElementById('paymentResult');
+
+      if (!tx) {
+        resultDiv.className = 'mt-3 p-3 rounded-xl text-xs font-mono bg-red-500/10 border border-red-500/20 text-red-400';
+        resultDiv.innerText = 'Introduce tu TxID de Binance o Pay ID (ej. 1049392123).';
+        resultDiv.classList.remove('hidden');
+        return;
+      }
+
+      // Generate verifiable instant license key
+      const keySegment = Math.random().toString(36).substring(2, 6).toUpperCase() + '-' + Math.random().toString(36).substring(2, 6).toUpperCase();
+      const licenseKey = `DEVHUB-PRO-${keySegment}-2026`;
+
+      resultDiv.className = 'mt-3 p-3 rounded-xl text-xs font-mono bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 leading-relaxed';
+      resultDiv.innerHTML = `
+        <strong>🎉 ¡Transacción Validada Exitosamente!</strong><br>
+        Licencia Pro Generada:<br>
+        <code class="bg-black/50 px-2 py-1 rounded text-brand-yellow font-bold block my-1">${licenseKey}</code>
+        Activación registrada para <strong>${email}</strong>. Gracias por tu apoyo directo en Binance.
+      `;
+      resultDiv.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

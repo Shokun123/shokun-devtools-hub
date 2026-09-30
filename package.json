@@ -1,0 +1,23 @@
+{
+  "name": "shokun-devtools-hub",
+  "version": "1.0.0",
+  "description": "Unified Developer Tools Hub, Multi-Product Catalog and Universal Binance Pay Checkout Portal",
+  "main": "ecosystem_monitor.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ecosystem_monitor.js",
+    "test": "node --test test/test_hub.js"
+  },
+  "keywords": [
+    "developer-tools",
+    "devtools-hub",
+    "binance-pay",
+    "micro-saas",
+    "awesome-list",
+    "github-action",
+    "vscode-extension",
+    "docker"
+  ],
+  "author": "Shokun123",
+  "license": "MIT"
+}

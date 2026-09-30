@@ -1,0 +1,38 @@
+name: Ecosystem Health Monitor & IndexNow Syndicator
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  monitor-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Run Integration Tests
+        run: npm test
+
+      - name: Execute Health Monitor & IndexNow Ping
+        run: node ecosystem_monitor.js
+
+      - name: Run AI PR Reviewer Action (Dogfooding)
+        uses: Shokun123/ai-pr-reviewer-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          fail-on-critical: false
