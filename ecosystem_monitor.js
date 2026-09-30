@@ -66,7 +66,7 @@ async function pingIndexNow() {
 
 function updateStatusMarkdown() {
   const now = new Date().toISOString();
-  let content = `# 🌐 Shokun DevTools Ecosystem — Live Status Report\n\n`;
+  let content = `# Shokun DevTools Ecosystem — Live Status Report\n\n`;
   content += `> **Last Automated Audit:** \`${now}\`  \n`;
   content += `> **Central Hub:** [shokun123.github.io/shokun-devtools-hub](${HUB_URL})  \n`;
   content += `> **Payout Destination:** **Binance Pay UID: \`1049392123\`** (\`User-79a91\`)\n\n`;
@@ -74,7 +74,7 @@ function updateStatusMarkdown() {
   content += `| :---: | :--- | :--- | :---: | :---: |\n`;
 
   ECOSYSTEM_TOOLS.forEach((tool, idx) => {
-    content += `| ${idx + 1} | **${tool.name}** | [\`${tool.repo}\`](https://github.com/${tool.repo}) | 🟢 Online | \`${tool.price}\` |\n`;
+    content += `| ${idx + 1} | **${tool.name}** | [\`${tool.repo}\`](https://github.com/${tool.repo}) | Online | \`${tool.price}\` |\n`;
   });
 
   content += `\n---\n*Automated health report maintained by GitHub Actions & IndexNow Protocol.*\n`;
