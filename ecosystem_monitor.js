@@ -89,6 +89,6 @@ async function run() {
 
 export { run, pingIndexNow, updateStatusMarkdown, ECOSYSTEM_TOOLS };
 
-if (process.argv[1].endsWith('ecosystem_monitor.js')) {
-  run();
+if (process.argv[1]?.endsWith('ecosystem_monitor.js')) {
+  run().then(() => process.exit(0)).catch(() => process.exit(1));
 }
