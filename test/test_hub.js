@@ -5,8 +5,8 @@ import path from 'path';
 import { ECOSYSTEM_TOOLS, updateStatusMarkdown } from '../ecosystem_monitor.js';
 
 test('Shokun DevTools Hub - Integration & Telemetry Tests', async (t) => {
-  await t.test('ECOSYSTEM_TOOLS tracks exactly 13 production assets', () => {
-    assert.equal(ECOSYSTEM_TOOLS.length, 13);
+  await t.test('ECOSYSTEM_TOOLS tracks exactly 14 production assets', () => {
+    assert.equal(ECOSYSTEM_TOOLS.length, 14);
     const names = ECOSYSTEM_TOOLS.map(t => t.name);
     assert.ok(names.includes('Binance Pay SaaS Starter'));
     assert.ok(names.includes('Awesome CursorRules & Agent Skills'));
@@ -15,6 +15,7 @@ test('Shokun DevTools Hub - Integration & Telemetry Tests', async (t) => {
     assert.ok(names.includes('Webhook Mock Engine'));
     assert.ok(names.includes('Markdown Docs PDF Builder'));
     assert.ok(names.includes('Env Guardian CLI'));
+    assert.ok(names.includes('B2B Verified Leads Pack'));
   });
 
   await t.test('index.html contains Binance UID 1049392123 and all tool names', () => {

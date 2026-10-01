@@ -77,7 +77,7 @@
     <div class="text-center max-w-3xl mx-auto mb-12">
       <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-yellow bg-brand-yellow/10 border border-brand-yellow/30 px-3.5 py-1.5 rounded-full mb-5">
         <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
-        13 Herramientas de Producción en Vivo
+        14 Herramientas & Datasets en Vivo
       </div>
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
         Catálogo Unificado de <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-yellow-300 to-amber-500">Herramientas & Micro-SaaS</span>
@@ -93,7 +93,7 @@
             class="w-full bg-brand-card border border-brand-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-yellow font-mono">
         </div>
         <div class="flex gap-1.5 justify-center flex-wrap" id="categoryButtons">
-          <button onclick="setCategory('all')" class="cat-btn active bg-brand-yellow text-black font-extrabold text-xs px-3 py-2 rounded-xl transition" data-cat="all">Todos (13)</button>
+          <button onclick="setCategory('all')" class="cat-btn active bg-brand-yellow text-black font-extrabold text-xs px-3 py-2 rounded-xl transition" data-cat="all">Todos (14)</button>
           <button onclick="setCategory('dev')" class="cat-btn bg-brand-card hover:bg-white/10 text-gray-300 font-bold text-xs px-3 py-2 rounded-xl border border-brand-border transition" data-cat="dev">Dev Tools</button>
           <button onclick="setCategory('growth')" class="cat-btn bg-brand-card hover:bg-white/10 text-gray-300 font-bold text-xs px-3 py-2 rounded-xl border border-brand-border transition" data-cat="growth">B2B Growth</button>
           <button onclick="setCategory('infra')" class="cat-btn bg-brand-card hover:bg-white/10 text-gray-300 font-bold text-xs px-3 py-2 rounded-xl border border-brand-border transition" data-cat="infra">Infra & CI</button>
@@ -489,6 +489,36 @@
           </a>
           <button onclick="openModal('env-guardian', 'Env Guardian Enterprise License', '19.00')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow">
             Licencia ($19)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tool 14: B2B Verified Leads Pack -->
+      <div class="tool-card bg-brand-card border border-brand-border hover:border-brand-yellow/60 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between" data-cat="growth" data-name="b2b verified leads pack google maps extractor agencies real estate clinics dataset csv">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded-full font-mono">B2B Dataset</span>
+            <span class="text-xs font-mono font-bold text-emerald-400">$15.00 USDT</span>
+          </div>
+          <h3 class="text-base font-extrabold text-white mb-2 flex items-center gap-2">
+            <svg class="w-4 h-4 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>B2B Verified Leads Pack (300 Decisores)</span>
+          </h3>
+          <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Base de datos verificada lista para prospección: 300 empresas con teléfono directo, página web, email, valoración y dirección (Agencias Miami, Inmobiliarias Austin y Clínicas NY).
+          </p>
+        </div>
+        <div class="pt-4 border-t border-brand-border/60 flex items-center justify-between gap-2">
+          <a href="https://github.com/Shokun123/google-maps-b2b-lead-scraper" target="_blank" class="text-xs text-gray-300 hover:text-white font-mono bg-white/5 px-3 py-2 rounded-xl border border-white/10 transition">
+            Scraper Engine →
+          </a>
+          <button onclick="openModal('leads-pack', 'Pack B2B Leads Verificados (300 Contactos)', '15.00')" class="bg-gradient-to-r from-brand-yellow to-amber-400 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow">
+            Comprar Pack ($15)
           </button>
         </div>
       </div>

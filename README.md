@@ -3,21 +3,21 @@
 [![Live Web Portal](https://img.shields.io/badge/Live_Hub-shokun123.github.io%2Fshokun--devtools--hub-F0B90B?style=flat-square&logo=googlechrome&logoColor=black)](https://shokun123.github.io/shokun-devtools-hub/)
 [![Binance Pay](https://img.shields.io/badge/Sponsor%20via-Binance%20Pay-F0B90B.svg?style=flat-square&logo=binance&logoColor=white)](#universal-binance-pay-checkout)
 [![CI Monitor](https://github.com/Shokun123/shokun-devtools-hub/actions/workflows/monitor.yml/badge.svg)](https://github.com/Shokun123/shokun-devtools-hub/actions)
-[![Total Products](https://img.shields.io/badge/Ecosystem-13%20Production%20Tools-brightgreen.svg?style=flat-square)](#)
+[![Total Products](https://img.shields.io/badge/Ecosystem-14%20Production%20Tools-brightgreen.svg?style=flat-square)](#)
 
 > **Central Developer Catalog & Multi-Product Marketplace with Universal Binance Pay Checkout.**  
-> A unified, $0-overhead software portfolio featuring open-source boilerplates, VS Code extensions, GitHub Actions, Docker containers, and B2B growth engines.
+> A unified, $0-overhead software portfolio featuring open-source boilerplates, VS Code extensions, GitHub Actions, Docker containers, datasets, and B2B growth engines.
 
 ---
 
 ## Live Web Portal
 
-Explore, filter, and test all 13 tools in real-time:  
+Explore, filter, and test all 14 tools in real-time:  
 [https://shokun123.github.io/shokun-devtools-hub/](https://shokun123.github.io/shokun-devtools-hub/)
 
 ---
 
-## The Complete 13-Product Portfolio
+## The Complete 14-Product Portfolio
 
 | # | Product Name | Category | Primary Stack | Price (USDT) | Repository |
 | :---: | :--- | :---: | :--- | :---: | :--- |
@@ -34,6 +34,7 @@ Explore, filter, and test all 13 tools in real-time:
 | **11** | **Webhook Mock Engine** | Dev Tools | Node.js, TypeScript | **$19** | [Shokun123/webhook-mock-engine](https://github.com/Shokun123/webhook-mock-engine) |
 | **12** | **Markdown Docs PDF Builder** | CLI Compiler | Node.js, CSS Print | **$15** | [Shokun123/markdown-docs-pdf-builder](https://github.com/Shokun123/markdown-docs-pdf-builder) |
 | **13** | **Env Guardian CLI** | Infra & Security | Node.js, AES-256 | **$19** | [Shokun123/env-guardian-cli](https://github.com/Shokun123/env-guardian-cli) |
+| **14** | **B2B Verified Leads Pack** | B2B Dataset | CSV, Excel, 300 Leads | **$15** | [Shokun123/google-maps-b2b-lead-scraper](https://github.com/Shokun123/google-maps-b2b-lead-scraper) |
 
 ---
 
